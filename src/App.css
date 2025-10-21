@@ -1,14 +1,44 @@
+/* === General Layout === */
 .App {
-  text-align: center;
-  padding: 20px;
   font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.bot-collection, .your-bot-army {
+/* Main two-column layout */
+.main-layout {
+  display: flex;
+  gap: 20px;
+}
+
+/* Left panel: bots collection or specs */
+.left-panel {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Right panel: your army */
+.right-panel {
+  flex: 1;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 10px;
+  height: fit-content;
+  position: sticky;
+  top: 20px; /* keeps it visible while scrolling */
+}
+
+/* BotCollection display grid */
+.bot-collection {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
+  margin-top: 20px;
 }
 
 .bot-card {
@@ -19,12 +49,28 @@
   width: 200px;
   cursor: pointer;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+}
+
+.bot-card:hover {
+  transform: scale(1.05);
 }
 
 .bot-card img {
   width: 100%;
   border-radius: 8px;
+}
+
+/* Army cards (smaller) */
+.your-bot-army {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.your-bot-army h2 {
+  text-align: center;
 }
 
 .delete-btn {
@@ -36,56 +82,5 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.sort-bar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.sort-section select {
-  margin-left: 10px;
-}
-
-.filter-section {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.bot-specs {
-  text-align: center;
-  background: #1e1e1e;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  margin: 20px auto;
-}
-
-.bot-specs img {
-  width: 250px;
-  border-radius: 10px;
-}
-
-.bot-specs .buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-}
-
-.bot-specs .buttons button:first-child {
-  background: gray;
-  color: white;
-}
-
-.bot-specs .buttons button:last-child {
-  background: green;
-  color: white;
+  padding: 3px 6px;
 }

@@ -22,32 +22,28 @@ function App() {
   const handleBack = () => setSelectedBot(null);
 
 const handleAddToArmy = (bot) => {
-  // Prevent enlisting more than one bot per class
   if (army.find((b) => b.bot_class === bot.bot_class)) {
     alert(`You already have a ${bot.bot_class} in your army!`);
     return;
   }
 
-  // Prevent duplicates by ID
-  if (army.find((b) => b.id === bot.id)) {
-    return;
+  if (!army.find((b) => b.id === bot.id)) {
+    setArmy([...army, bot]);
   }
 
-  setArmy([...army, bot]);
   setSelectedBot(null);
 };
 
-
- const handleRemoveFromArmy = (bot) => {
+// Remove bot from army (just from right panel)
+const handleRemoveFromArmy = (bot) => {
   setArmy(army.filter((b) => b.id !== bot.id));
 };
 
-  const handleDeleteBot = (bot) => {
-    fetch(`http://localhost:8001/bots/${bot.id}`, { method: "DELETE" }).then(() => {
-      setArmy(army.filter((b) => b.id !== bot.id));
-      setBots(bots.filter((b) => b.id !== bot.id));
-    });
-  };
+// "Delete" bot only from YourBotArmy, not the database
+const handleDeleteBot = (bot) => {
+  setArmy(army.filter((b) => b.id !== bot.id));
+};
+
 
   const handleSortChange = (criteria) => setSortBy(criteria);
 

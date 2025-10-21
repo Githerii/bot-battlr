@@ -21,5 +21,29 @@
       "catchphrase": "0110011100000100011110100110011000011001",
       "avatar_url": "https://robohash.org/quidemconsequaturaut.png?size=300x300&set=set1"
     }
+
+    ,
+    {
+      "id": 103,
+      "name": "BattleBot",
+      "health": 100,
+      "damage": 50,
+      "armor": 80,
+      "bot_class": "Warrior",
+      "catchphrase": "0101010101100011011100110110000101110010",
+      "avatar_url": "https://robohash.org/voluptatemetvoluptas.png?size=300x300&set=set1"
+    }
+
+    ,
+    {
+      "id": 104,
+      "name": "RoboWarrior",
+      "health": 92,
+      "damage": 45,
+      "armor": 70,
+      "bot_class": "Tank",
+      "catchphrase": "0111001101101111011100100110000101110010",
+      "avatar_url": "https://robohash.org/voluptatemetvoluptas.png?size=300x300&set=set1"
+    }
   ]
 }

@@ -2,7 +2,7 @@
   "bots": [
     {
       "id": 101,
-      "name": "wHz-93",
+      "name": "SuperChallenger",
       "health": 94,
       "damage": 20,
       "armor": 63,
@@ -13,7 +13,7 @@
     
     {
       "id": 102,
-      "name": "RyM-66",
+      "name": "ThinkTank",
       "health": 86,
       "damage": 36,
       "armor": 77,
